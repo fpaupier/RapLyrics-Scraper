@@ -66,6 +66,7 @@ Do not abuse it. plz 🙏
 ## Related work
 
 This project was intensively used to generate high quality text dataset that were consumed by:
+
     - [RapLyrics-Back](https://gitlab.com/cyrilou242/RapLyrics-Back_Word_2), to train and serve a lyrics-generative model.
-    - [RapLyrics-Front]() consumes the model trained and served by [RapLyrics-Back](https://gitlab.com/cyrilou242/RapLyrics-Back_Word_2) 
-        enabling [raplyrics.eu](https://raplyrics.eu) users to generate unique and inspirational lyrics.
+    
+    - [RapLyrics-Front]() consumes the model trained and served by [RapLyrics-Back](https://gitlab.com/cyrilou242/RapLyrics-Back_Word_2) enabling [raplyrics.eu](https://raplyrics.eu) users to generate unique and inspirational lyrics.
