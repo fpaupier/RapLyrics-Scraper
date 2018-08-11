@@ -37,7 +37,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python -m unittest tests/test_genius.py
+            python3 -m unittest tests/test_genius.py
 
       - store_artifacts:
           path: test-reports
