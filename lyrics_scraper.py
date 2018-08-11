@@ -5,88 +5,56 @@ import argparse
 import os
 import logging
 
-import genius
+from genius.api import Genius
+
+logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(
-    description="A Genius scraper to obtain lyric from a specified lists of rapper"
+    description="A Genius scraper to obtain lyric from a specified lists of lyricists"
 )
 parser.add_argument('-v',
                     '--verbose',
                     help='increase output verbosity',
-                    action='store_true'
+                    action='store_true',
                     )
 
 parser.add_argument('-l',
                     '--lyrics_dir',
-                    help='directory in which to save the scraped lyrics',
+                    help='lyrics save directory',
                     type=str,
-                    default='lyrics'
+                    default='lyrics',
+                    )
+
+parser.add_argument('-n',
+                    '--songs_per_artists',
+                    help='number of maximum songs to scrap per artist',
+                    type=int,
+                    default=200,
                     )
 
 args = parser.parse_args()
 if args.verbose:
     logging.basicConfig(level=logging.DEBUG)
 
-logger = logging.getLogger(__name__)
-
-print(args.lyrics_dir)
-
-# To define
-MAX_SONGS = 2
-
-artistsList = [
-    "Eminem",
-    "NF",
-    "the notorious big",
-    "Jay-z",
-    "Kendrick Lamar",
-    "Kanye West",
-    "Nas",
-    "J Cole",
-    "Lupe Fiasco",
-    "Pusha-T",
-    "Lil Wayne",
-    "André 3000",
-    "Immortal Technique",
-    "Talib Kweli",
-    "Ice Cube",
-    "Big L",
-    "Drake",
-    "Rakim",
-    "Deniro Farrar",
-    "Eazy-E",
-    "Logic",
-    "Mos Def",
-    "Common",
-    "Scarface",
-    "Royce Da 59",
-    "Chance The Rapper",
-    "Childish Gambino",
-    "Tyler The Creator",
-    "Action Bronson",
-    "Mac Miller",
-    "A$AP Rocky",
-    "Joey Bada",
-    "CunninLynguists",
-    "A$AP Ant",
-    "Isaiah Rashad",
-    "Earl Sweatshirt",
-    "Montana of 300",
-    "Bas",
+artists = [
+    'NF',
+    'Eminem'
 ]
-artistsList = ['Eminem']
-logger.info(f"Number of artists to scrap {len(artistsList)}")
+
+logger.info(f'Lyrics saved in directory{args.lyrics_dir}.')
+logger.info(f'Number of artists to scrap {len(artists)}')
+
 notDownloaded = []
 dirname = os.path.dirname(__file__)
 lyrics_folder = args.lyrics_dir
 artist_processed_counter = 0
 
-for artist in artistsList:
+for artist in artists:
     # Initialization
-    api = genius.Genius()
+    api = Genius()
     logger.info(f'Processing artist {artist}')
     try:
-        artistScrap = api.search_artist(artist, max_songs=MAX_SONGS)
+        artistScrap = api.search_artist(artist, max_songs=args.songs_per_artists)
         if artistScrap.num_songs > 0:
             lyrics = ''
             for song in artistScrap.songs:
@@ -107,11 +75,10 @@ for artist in artistsList:
 logger.info('Success. All artists have been processed')
 logger.info(f'Artists for whom the scrapping failed: {notDownloaded}')
 logger.info('Merge the files with')
-logger.info('cat *_lyrics.txt > fusion.txt')
+logger.info('cat *_lyrics.txt > merged_lyrics.txt')
 logger.info(f'\n Stats : sd'
-            f'\n  - Number of artists to process: {len(artistsList)}'
+            f'\n  - Number of artists to process: {len(artists)}'
             f'\n  - Success: {artist_processed_counter}'
             f'\n  - Failure: {len(notDownloaded)}'
-            f'\n  - Sucess Rate: {artist_processed_counter/len(artistsList)}'
+            f'\n  - Sucess Rate: {artist_processed_counter/len(artists)}'
             )
-
