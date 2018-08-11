@@ -21,7 +21,7 @@ Feel free to tweak this scraper to fit your needs. Kudos to open source.
 
 This project is built on python3 - Install the required libraries.
 
-    $ mkvirtualenv --python  `which python3 -r requirements.txt RapLyrics-Scraper
+    $ mkvirtualenv --python  `which python3` -r requirements.txt RapLyrics-Scraper
 
 Make sure you set up your PyCharm to use the correct Python interpreter.
 I strongly recommend the use of one virtualenv per project.
