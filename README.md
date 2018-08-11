@@ -1,5 +1,7 @@
 # RapLyrics-Scraper
 
+[![CircleCI](https://circleci.com/gh/fpaupier/RapLyrics-Scraper/tree/master.svg?style=svg)](https://circleci.com/gh/fpaupier/RapLyrics-Scraper/tree/master)
+
 ## Context
 
 This project aims to provide high quality text dataset of rap music lyrics.
