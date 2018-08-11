@@ -1,0 +1,23 @@
+# Configuration file to run test on circle ci at each build
+version: 2
+
+jobs:
+  build:
+
+    docker:
+      - image: circleci/python:3.6.1
+
+    steps:
+      - checkout # Copy Code repository
+
+      - run:
+          name: Install Python deps in a venv
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - run:
+          name: Run tests
+          command: |
+            python -m unittest tests/test_genius.py
