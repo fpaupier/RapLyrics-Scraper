@@ -59,10 +59,6 @@ python pre_processing/analysis.py
 
 Currently we get the songs by decreasing popularity order.
 
-## Warning
-Please keep in mind that it is the François' Genius API credentials that are used in the [genius/credentials.ini](genius/credentials.ini) file by default.  
-Do not abuse it. plz 🙏
-
 ## Related work
 
 This project was intensively used to generate high quality text dataset that were consumed by:
