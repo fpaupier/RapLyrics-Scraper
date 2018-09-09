@@ -65,4 +65,4 @@ This project was intensively used to generate high quality text dataset that wer
 
    - [RapLyrics-Back](https://github.com/cyrilou242/RapLyrics-Back), to train and serve a lyrics-generative model.
     
-   - [RapLyrics-Front](https://github.com/fpaupier/RapLyrics-Front) consumes the model trained and served by [RapLyrics-Back](https://github.com/cyrilou242/RapLyrics-Back) enabling [raplyrics.eu](https://raplyrics.eu) users to generate unique and inspirational lyrics.
+   - [RapLyrics-Front](https://github.com/fpaupier/RapLyrics-Front) consumes the model trained and served by [RapLyrics-Back](https://github.com/cyrilou242/RapLyrics-Back) enabling [raplyrics.eu](https://www.raplyrics.eu/?utm_source=github.com&utm_medium=github-readme&utm_campaign=github-scraper) users to generate unique and inspirational lyrics.
