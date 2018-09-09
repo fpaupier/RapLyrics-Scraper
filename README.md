@@ -6,7 +6,7 @@
 
 This project aims to provide high quality text dataset of rap music lyrics.
 Such dataset are then fed to a neural network to build lyrics-generation model.
-The resulting word-to-word lyrics-generative model is served on [raplyrics.eu](https://raplyrics.eu).
+The resulting word-to-word lyrics-generative model is served on [raplyrics.eu](https://www.raplyrics.eu/?utm_source=github.com&utm_medium=github-readme&utm_campaign=github-scraper).
 
 Feel free to tweak this scraper to fit your needs. Kudos to open source.
 
