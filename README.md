@@ -1,3 +1,5 @@
+_PR welcome if you want to contribute to this project_
+
 # RapLyrics-Scraper
 
 [![CircleCI](https://circleci.com/gh/fpaupier/RapLyrics-Scraper/tree/master.svg?style=svg)](https://circleci.com/gh/fpaupier/RapLyrics-Scraper/tree/master)
